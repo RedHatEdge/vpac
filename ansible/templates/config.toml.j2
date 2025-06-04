@@ -1,0 +1,36 @@
+[customizations.installer.kickstart]
+contents = """
+%pre --log=/dev/console --erroronfail
+
+cat > /etc/ostree/auth.json << 'EOF'
+
+%end
+
+lang en_US.UTF-8
+keyboard us
+
+# Timezone and NTP settings
+timezone {{ tz }} --utc
+
+text --non-interactive
+poweroff
+
+zerombr
+clearpart --all --initlabel
+# Create boot and swap partitions as required by the current hardware platform
+reqpart --add-boot
+# Add an LVM volume group and allocate a system root logical volume
+part pv.01 --grow
+volgroup rhel pv.01
+logvol / --vgname=rhel --fstype=xfs --size=10240 --name=root
+
+# Configure network to use DHCP and activate on boot
+network --bootproto=dhcp --device=link --activate --onboot=on
+rootpw {{ root_user_pwd }}
+
+%post --log=/dev/console --erroronfail
+
+bootc switch --mutate-in-place --transport registry {{ image }}
+
+%end
+"""
