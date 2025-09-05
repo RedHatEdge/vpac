@@ -19,6 +19,7 @@ Table below lists repository secrets leveraged in Github actions workflow. Be su
 | INFLUX_ACTIVATION_KEY | Activation Key generated from console.redhat.com |
 | LOKI_ACTIVATION_KEY | Activation key generated from console.redhat.com |
 | ORGID | Organization ID from console.redhat.com |
+| REGISTRY_USER | User account to login to quay.io |
 | REGISTRY_USER_PASSWORD | Password to login to quay.io registry |
 
 ## Observability with Open Telemetry
