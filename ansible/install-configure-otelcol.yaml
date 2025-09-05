@@ -1,13 +1,11 @@
-- name: Deploy OTEL collector
+---
+- name: Install and Configure OTEL collector
   hosts: vpac
   become: yes
   gather_facts: yes
-  
-  tasks:
-  - name: Load secrets
-    ansible.builtin.include_vars:
-      file: "./vars/secrets.yml"
-      
+  vars_files:
+  - ./vars/otelcol.yaml
+  tasks:      
   - name: Create a temp folder to download otel contrib bits
     ansible.builtin.tempfile:
       state: directory
