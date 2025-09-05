@@ -50,7 +50,7 @@ RUN systemctl enable loki.service
 # Download the GPG key
 RUN curl --silent --location -O \
     https://packages.grafana.com/gpg.key \
-    && echo "58052c148058ace26dbd01ce057afa5709fb9d39c8a8ab16800be3f42fc02ab2  gpg.key" \
+    && echo "3d4029689bc7e4444ec00abafa07f21e9c812b41f1123ab5bbe6f8c3e3f7ff8c  gpg.key" \
     | sha256sum --check - && cat gpg.key \
     | gpg --dearmor \
     | tee /etc/pki/rpm-gpg/RPM-GPG-KEY-grafana > /dev/null

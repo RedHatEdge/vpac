@@ -55,7 +55,7 @@ jobs:
             password: ${{ secrets.REGISTRY_USER_PASSWORD }}
             auth_file_path: /run/containers/0/auth.json
 
-        - name: Build Influx image
+        - name: Build Loki image
           id: build-image
           uses: redhat-actions/buildah-build@v2
           with:
