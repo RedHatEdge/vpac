@@ -39,7 +39,15 @@ jobs:
             mkdir -p $HOME/.docker
             echo $auth > $HOME/.docker/config.json
         
-        - name: Login to registry
+        - name: login to registry.redhat.io
+          uses: redhat-actions/podman-login@v1
+          with:
+            registry: registry.redhat.io
+            username: ${{ secrets.REGISTRY_USER }}
+            password: ${{ secrets.REGISTRY_USER_PASSWORD }}
+            auth_file_path: /run/containers/0/auth.json
+
+        - name: Login to quay.io
           uses: redhat-actions/podman-login@v1
           with:
             registry: quay.io
