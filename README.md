@@ -23,12 +23,13 @@ Table below lists repository secrets leveraged in Github actions workflow. Be su
 | REGISTRY_USER_PASSWORD | Password to login to quay.io registry |
 
 ## Observability with Open Telemetry
-Leverage Opentelemetry to forward metrics and logs to telemetry backend.
-
-### Building Telemetry backend
-For this demo we are going to use Influxdb to aggregate all the metrics and Loki for aggregating logs from RHEL hosts.
+Leverage Open Telemetry to forward metrics and logs to telemetry backend. Check out [observability](./docs/observability/index.md)
 
 
+
+#### Build ISO
+
+#### Build QCOW2
 
 ### Installing the Open Telemetry Collector
 To install Otel collector on the RHEL hosts run an ansible playbook as shown in command below. Be sure to update the values in vars/otelcol.yaml to match to your specific config before running the playbook.
@@ -36,6 +37,7 @@ To install Otel collector on the RHEL hosts run an ansible playbook as shown in 
 
 ```sh
 cd ansible
-ansible-playbook ansible/install-configure-otelcol.yaml
+
+ansible-playbook -i inventory install-configure-otelcol.yaml
 ```
 

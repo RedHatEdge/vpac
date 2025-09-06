@@ -1,0 +1,8 @@
+ami: ami-04ce29025050b5564
+instance_name: "influxnode"
+instance_type: t2.xlarge
+key_name: ec2
+subnet_id: subnet-0e844dcb8323edd2c
+security_group_id: sg-0fa0b407346360849
+storage: 50
+commands: []
