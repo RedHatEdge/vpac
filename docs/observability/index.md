@@ -10,5 +10,7 @@ For this demo we are going to use Influxdb to aggregate all the metrics and Loki
 1. [Building Images](./backend/01-building-images.md)
 2. [Build AMI](./backend/02-build-ami.md)
 3. [Provision Telemetry Backend](./backend/03-provision.md)
-4. [Deploy Otel Collector](./deploy-otel-collector.md)
+
+## Deploy Otel Collector
+1. [Deploy Otel Collector](./deploy-otel-collector.md)
 
